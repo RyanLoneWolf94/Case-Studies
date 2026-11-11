@@ -13,6 +13,7 @@ delivered deliverables**: the brief, the strategy, the craft decisions, and the 
 | # | Project | Client | Type | Status |
 |---|---------|--------|------|--------|
 | 01 | [Illuminer Systems](./case-studies/01-illuminer-systems/) | Illuminer Systems (Hangzhou Illuminer Trading & Consulting) | Brand identity + web | ✅ Complete |
+| 02 | [Greyview Suites](./case-studies/02-greyview-suites/) | Greyview Suites (two-lodge hospitality group, Harare) | Brand + booking platform + marketing | 🔲 In progress |
 
 ---
 
