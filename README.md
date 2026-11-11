@@ -13,6 +13,7 @@ delivered deliverables**: the brief, the strategy, the craft decisions, and the 
 | # | Project | Client | Type | Status |
 |---|---------|--------|------|--------|
 | 01 | [Illuminer Systems](./case-studies/01-illuminer-systems/) | Illuminer Systems (Hangzhou Illuminer Trading & Consulting) | Brand identity + web | ✅ Complete |
+| 02 | [WyFix](./case-studies/02-wyfix/) | WYFIX (Pvt) Ltd — Harare | Brand strategy + identity + packaging | 🔲 In progress |
 
 ---
 
