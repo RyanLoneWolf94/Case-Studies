@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koki Delivery — Case Study · LoneWolf Digital</title>
+<meta name="description" content="Lead developer & DevOps for Koki Delivery, a cross-border e-commerce platform bridging Chinese suppliers and Southern African buyers. By LoneWolf Digital Inc.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#FF6B00;
+    --red:#CC1A00;
+    --purple:#5B0FA8;
+    --amber:#FFB300;
+    --ink:#120a1e;
+    --ink-2:#1c1130;
+    --paper:#f7f3ee;
+    --muted:#b9a9d4;
+    --line:rgba(255,255,255,.1);
+    --grad:linear-gradient(100deg,var(--orange),var(--amber) 42%,var(--purple));
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Barlow',system-ui,sans-serif;
+    background:var(--ink);
+    color:var(--paper);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--orange);color:#fff}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+  .ey{font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.72rem;color:var(--amber)}
+
+  /* ---- top bar ---- */
+  header.bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(18,10,30,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+  .brand .glyph{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;font-size:1rem}
+  .brand b{color:var(--orange)}
+  .bar a.back{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color .2s}
+  .bar a.back:hover{color:var(--amber)}
+
+  /* ---- hero ---- */
+  .hero{position:relative;padding:150px 0 70px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(760px 420px at 82% -8%,rgba(255,107,0,.30),transparent 60%),
+    radial-gradient(620px 480px at 6% 18%,rgba(91,15,168,.34),transparent 62%);
+    z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{font-size:clamp(2.5rem,6.4vw,4.4rem);font-weight:900;line-height:1.02;letter-spacing:-.025em;margin:16px 0 18px}
+  .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(1.05rem,2.3vw,1.3rem);color:#e7dcf5;max-width:720px;font-weight:500}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .chip{font-family:'Montserrat',sans-serif;font-size:.74rem;font-weight:600;padding:8px 14px;border:1px solid var(--line);border-radius:100px;color:#eaddfb;background:rgba(255,255,255,.03)}
+  .chip b{color:var(--amber);font-weight:700}
+  .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;text-decoration:none;padding:13px 22px;border-radius:12px;transition:transform .2s,box-shadow .2s}
+  .btn.p{background:var(--grad);color:#fff;box-shadow:0 10px 30px -10px rgba(255,107,0,.6)}
+  .btn.p:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(255,107,0,.7)}
+  .btn.s{border:1px solid var(--line);color:#eaddfb}
+  .btn.s:hover{border-color:var(--orange);color:#fff}
+
+  /* ---- stat band ---- */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(91,15,168,.10),transparent)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:34px 28px}
+  .stat .n{font-size:2rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+  .stat .l{font-size:.82rem;color:var(--muted);font-weight:500;margin-top:2px}
+
+  /* ---- sections ---- */
+  section.block{padding:62px 0;border-bottom:1px solid var(--line)}
+  section.block h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;letter-spacing:-.02em;margin:10px 0 20px;line-height:1.1}
+  section.block p{color:#ded2ee;font-size:1.04rem;max-width:760px;margin-bottom:14px}
+  section.block p strong{color:#fff}
+  .pullquote{border-left:3px solid var(--orange);padding:6px 0 6px 22px;margin:26px 0;font-size:1.3rem;font-weight:700;color:#fff;max-width:720px;font-style:italic}
+
+  /* cards */
+  .grid{display:grid;gap:18px;margin-top:26px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,border-color .25s}
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,107,0,.5)}
+  .card .ic{width:42px;height:42px;border-radius:11px;background:rgba(255,107,0,.12);display:grid;place-items:center;font-size:1.25rem;margin-bottom:14px}
+  .card h3{font-size:1.12rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
+  .card p{font-size:.95rem;color:var(--muted);margin:0}
+  .card p strong{color:#f0e7fb}
+
+  /* tech table */
+  .tech{margin-top:24px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .tech .row{display:grid;grid-template-columns:200px 1fr;gap:0;border-bottom:1px solid var(--line)}
+  .tech .row:last-child{border-bottom:0}
+  .tech .row>div{padding:13px 18px;font-size:.95rem}
+  .tech .row .k{background:rgba(255,255,255,.03);font-family:'Montserrat',sans-serif;font-weight:600;color:var(--amber);font-size:.82rem}
+  .tech .row .v{color:#ded2ee}
+
+  /* flow */
+  .flow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:26px}
+  .flow .step{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;padding:10px 15px;border-radius:10px;background:var(--ink-2);border:1px solid var(--line)}
+  .flow .arw{color:var(--orange);font-weight:900}
+
+  /* deliverables */
+  .del{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+  .del .item{display:flex;gap:12px;align-items:flex-start;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+  .del .item .e{font-size:1.2rem;line-height:1.3}
+  .del .item span{font-size:.95rem;color:#ded2ee}
+  .del .item b{color:#fff;display:block;font-size:.98rem}
+
+  /* incident callout */
+  .callout{background:linear-gradient(120deg,rgba(204,26,0,.16),rgba(91,15,168,.14));border:1px solid rgba(255,107,0,.3);border-radius:18px;padding:28px;margin-top:26px}
+  .callout .tag{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--red);padding:5px 11px;border-radius:7px;margin-bottom:12px}
+  .callout h3{font-size:1.25rem;font-weight:800;margin-bottom:10px}
+  .callout p{color:#efe6f8;margin-bottom:0}
+
+  /* outcome */
+  .outcome{background:var(--grad);border-radius:22px;padding:44px 34px;margin-top:10px;position:relative;overflow:hidden}
+  .outcome::after{content:"";position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.12)}
+  .outcome h2{color:#fff;position:relative;z-index:1}
+  .outcome p{color:rgba(255,255,255,.95);max-width:720px;position:relative;z-index:1;font-size:1.08rem}
+
+  footer{padding:46px 0 60px;text-align:center}
+  footer .glyph{width:38px;height:38px;border-radius:11px;background:var(--grad);display:inline-grid;place-items:center;font-size:1.2rem;margin-bottom:14px}
+  footer .tl{font-style:italic;color:var(--amber);font-weight:600;margin-bottom:6px}
+  footer .cp{font-size:.85rem;color:var(--muted)}
+  footer .cp b{color:var(--orange)}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:820px){
+    .stats .wrap{grid-template-columns:repeat(2,1fr);gap:26px}
+    .g2,.g3,.del{grid-template-columns:1fr}
+    .tech .row{grid-template-columns:130px 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brand"><span class="glyph">🐺</span> <span><b>LoneWolf</b> Digital</span></div>
+    <a class="back" href="../../">← All case studies</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="ey rv">Case Study 02 · Tech Development + DevOps</div>
+    <h1 class="rv">Koki Delivery —<br><span class="g">running the whole pack</span></h1>
+    <p class="lead rv">A cross-border e-commerce platform linking Chinese suppliers to Southern African buyers. I built the original web system, then took the reins as lead developer and DevOps engineer across the entire live ecosystem.</p>
+    <div class="meta rv">
+      <span class="chip"><b>Client:</b> Koki Technologies</span>
+      <span class="chip"><b>Role:</b> Lead Dev &amp; DevOps</span>
+      <span class="chip"><b>Stack:</b> LikeShop · PHP · Uni-App · Huawei Cloud</span>
+      <span class="chip"><b>Status:</b> Ongoing retainer</span>
+    </div>
+    <div class="cta rv">
+      <a class="btn p" href="https://www.kokidelivery.co" target="_blank" rel="noopener">Visit the platform ↗</a>
+      <a class="btn s" href="#build">What I built ↓</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat rv"><div class="n">5+</div><div class="l">Payment rails integrated</div></div>
+    <div class="stat rv"><div class="n">100%</div><div class="l">Platform recovery, INC-2026-051</div></div>
+    <div class="stat rv"><div class="n">2</div><div class="l">App stores (Play + iOS)</div></div>
+    <div class="stat rv"><div class="n">1</div><div class="l">Point of accountability — me</div></div>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="ey rv">01 · The Brief</div>
+    <h2 class="rv">One platform, three hard problems at once</h2>
+    <p class="rv">Koki Technologies runs a <strong>cross-border e-commerce and logistics marketplace</strong> connecting Chinese manufacturers with consumers in Zimbabwe and South Africa. It has to do three difficult things simultaneously: run a multi-vendor storefront, consolidate international freight through warehouse depots in China, and settle payments across African mobile-money rails most off-the-shelf systems have never heard of.</p>
+    <p class="rv">The engagement started with <strong>building the initial web e-commerce system</strong> — and grew into something bigger. Today I'm Koki's lead developer and DevOps engineer across the full ecosystem: web, mobile app, server infrastructure, payments, and app-store presence.</p>
+    <div class="pullquote rv">Keep a live, revenue-generating cross-border platform stable, compliant, and evolving — while re-architecting the pieces holding it back.</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="ey rv">02 · The System</div>
+    <h2 class="rv">The ecosystem I own, end to end</h2>
+    <p class="rv">A multi-vendor marketplace stack with custom cross-border logistics and payment extensions layered on top.</p>
+    <div class="tech rv">
+      <div class="row"><div class="k">Backend core</div><div class="v">LikeShop Multi-Vendor — PHP 7.4/8.0, ThinkPHP</div></div>
+      <div class="row"><div class="k">Database</div><div class="v">MySQL — baskets, vendor wallets, order queues</div></div>
+      <div class="row"><div class="k">Web server</div><div class="v">Nginx reverse proxy + SSL/TLS termination</div></div>
+      <div class="row"><div class="k">Mobile shell</div><div class="v">Vue 2 via Uni-App → self-hosted Android APK (com.koki.service)</div></div>
+      <div class="row"><div class="k">Infrastructure</div><div class="v">Huawei Cloud ECS (Shanghai), Aliyun DNS + enterprise mail</div></div>
+      <div class="row"><div class="k">Background jobs</div><div class="v">Supervisor queue worker + cron (async email, scheduled tasks)</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="build">
+  <div class="wrap">
+    <div class="ey rv">03 · What I Built &amp; Took Over</div>
+    <h2 class="rv">From a build to full ownership</h2>
+    <div class="grid g2">
+      <div class="card rv">
+        <div class="ic">💳</div>
+        <h3>Payment gateway integration</h3>
+        <p>A cross-border payment pipeline tuned for the Zimbabwean market, where card-only checkout fails most buyers. <strong>Paynow integration</strong> for real-time EcoCash, OneMoney, Innbucks and Zimswitch — plus an <strong>offline receipt / QR audit flow</strong> that locks orders in "Pending Audit" until staff verify an uploaded bank screenshot.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic">🎨</div>
+        <h3>UI revamp</h3>
+        <p>Modernised the storefront and Uni-App mobile shell — tightening the in-app navigation and fixing the <strong>webview-embed pattern</strong> so custom tools (freight calculator, custom pages) surface cleanly inside the native app without breaking Uni-App routing.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic">🔔</div>
+        <h3>Notification system</h3>
+        <p>Rebuilt the seller order-notification system after sellers stopped getting order emails. <strong>Root-caused</strong> it to a downed background queue worker — buyer inquiries fired synchronously and kept working, which was the diagnostic key — then <strong>fixed and hardened</strong> it to survive reboots.</p>
+      </div>
+      <div class="card rv">
+        <div class="ic">🛠️</div>
+        <h3>DevOps &amp; infrastructure</h3>
+        <p>Single point of accountability for live infrastructure: EIP and DNS management, full-stack restart sequencing, firewall and access control, and documented runbooks so the platform stays recoverable and maintainable.</p>
+      </div>
+    </div>
+
+    <div class="callout rv">
+      <span class="tag">Incident · INC-2026-051</span>
+      <h3>Full platform blackout — recovered</h3>
+      <p>A hosting-account billing freeze triggered a hard shutdown on Huawei Cloud and <strong>released the server's Elastic IP</strong>, cutting it off from the public internet entirely. I ran the complete recovery: re-provisioned a fresh EIP and rebound it, restored firewall/SSH access, brought the full stack back up in the correct order (MySQL → PHP-FPM → Nginx → queue worker → cron), and realigned the Aliyun DNS to the new IP to restore the domain.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="ey rv">04 · App-Store Lifecycle</div>
+    <h2 class="rv">Keeping the app live and compliant</h2>
+    <p class="rv">I own Koki's mobile presence on <strong>Google Play</strong> and the push to iOS.</p>
+    <div class="grid g3">
+      <div class="card rv"><div class="ic">📈</div><h3>Target API update</h3><p>Recompiled the Uni-App build to meet Google's mandatory API-level policy, keeping the app publishable past the enforcement deadline.</p></div>
+      <div class="card rv"><div class="ic">✅</div><h3>Account compliance</h3><p>Cleared an inactivity-closure warning via a compliant submission — one action resolving two warnings at once.</p></div>
+      <div class="card rv"><div class="ic">🍎</div><h3>iOS submission</h3><p>Preparing Koki's first App Store submission — signing, build and upload via a Windows-based route.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="ey rv">05 · Deliverables</div>
+    <h2 class="rv">What's been shipped</h2>
+    <div class="del">
+      <div class="item rv"><span class="e">🛒</span><span><b>Initial web e-commerce system</b>Multi-vendor marketplace build</span></div>
+      <div class="item rv"><span class="e">💳</span><span><b>Cross-border payment pipeline</b>Paynow · EcoCash · OneMoney · Innbucks · Zimswitch + offline audit</span></div>
+      <div class="item rv"><span class="e">🎨</span><span><b>UI revamp</b>Storefront + mobile shell, clean webview embedding</span></div>
+      <div class="item rv"><span class="e">🔔</span><span><b>Rebuilt notification system</b>Async order emails — diagnosed, fixed, hardened</span></div>
+      <div class="item rv"><span class="e">📦</span><span><b>Freight consolidation hub + calculator</b>Custom logistics extensions</span></div>
+      <div class="item rv"><span class="e">🛠️</span><span><b>DevOps ownership</b>Recovery, restart runbooks, DNS/EIP management</span></div>
+      <div class="item rv"><span class="e">📱</span><span><b>App-store lifecycle</b>Google Play compliance + iOS submission prep</span></div>
+      <div class="item rv"><span class="e">📚</span><span><b>Operational runbooks</b>Architecture, incident &amp; engagement docs for continuity</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="ey rv">06 · The Model</div>
+    <h2 class="rv">Ownership, not a one-off</h2>
+    <div class="flow rv">
+      <span class="step">Initial build</span><span class="arw">→</span>
+      <span class="step">Handover</span><span class="arw">→</span>
+      <span class="step">Lead dev + DevOps</span><span class="arw">→</span>
+      <span class="step">Payments</span><span class="arw">→</span>
+      <span class="step">UI revamp</span><span class="arw">→</span>
+      <span class="step">Notifications</span><span class="arw">→</span>
+      <span class="step">Incident recovery</span><span class="arw">→</span>
+      <span class="step">App-store compliance</span><span class="arw">→</span>
+      <span class="step">Ongoing retainer</span>
+    </div>
+    <p class="rv" style="margin-top:26px">I'm the single point of accountability for Koki's live ecosystem under a support retainer — combining hands-on development, infrastructure operations and release management, and documenting every system and incident into reusable runbooks so the platform stays maintainable long after any single fix.</p>
+  </div>
+</section>
+
+<section class="block" style="border-bottom:0">
+  <div class="wrap">
+    <div class="outcome rv">
+      <div class="ey" style="color:rgba(255,255,255,.85)">07 · Outcome</div>
+      <h2>From built-then-stalling to stable and growing</h2>
+      <p>Koki moved from a system at risk of stalling to a stable, compliant, actively maintained cross-border platform — with a payment layer tuned to its real market, a modernised UI, a reliable notification system, and infrastructure that recovers fast when things break. The engagement continues as an active retainer, with the mobile footprint expanding to iOS and a longer-term platform modernisation on the roadmap.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="glyph">🐺</div>
+    <div class="tl">Your Brand's pack in the digital wild.</div>
+    <div class="cp">Case study · <b>LoneWolf Digital Inc.</b> · Ryan Nyasha Makwabarara — Lead Developer &amp; DevOps</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%4,3)*70)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
