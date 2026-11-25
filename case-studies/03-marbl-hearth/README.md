@@ -11,9 +11,9 @@
 | **Sector** | Artisanal bakery & catering |
 | **Agency** | LoneWolf Digital Inc. |
 | **My role** | Creative Director, Brand Strategist & Digital Marketing Lead |
-| **Engagement type** | Full rebrand (Wolf Package) + local SEO + paid social launch & management |
-| **Status** | ✅ Rebrand complete (23/23 deliverables) · 🔲 Social management ongoing by cycle |
-| **Live** | [tiktok.com/@Marbl_Hearth_Zw](https://www.tiktok.com/@Marbl_Hearth_Zw) · marblhearth.co.zw (domain live, site pending) |
+| **Engagement type** | Full rebrand (Wolf Package) + local SEO + paid social launch & management + team operations system & dashboard |
+| **Status** | ✅ Rebrand complete (23/23 deliverables) · ✅ Team operations system & dashboard delivered · 🔲 Social management ongoing by cycle |
+| **Live** | [team.marblhearth.co.zw](https://team.marblhearth.co.zw) (team dashboard) · [tiktok.com/@Marbl_Hearth_Zw](https://www.tiktok.com/@Marbl_Hearth_Zw) · marblhearth.co.zw (domain live, public site pending) |
 
 ---
 
@@ -172,6 +172,53 @@ and a paid launch that **out-performed its own targets**:
 The rebrand engagement closed as **complete (23/23 deliverables)**, with the digital
 foundation in place to scale. The launch objective for the quarter was **credibility, not
 immediate sales** — and the numbers established exactly that.
+
+---
+
+## 7. Phase 2 — Team Operations System & Dashboard
+
+With the brand built and the launch proven, the next problem was operational. The brand's
+day-to-day assets — product photos, prices, monthly plans — were scattered, and every
+small update still routed back through the studio. This phase built the system the
+client's own team runs.
+
+### Scope
+- **A single shared Google Drive**, organised into numbered folders — Brand Assets,
+  Product Photos (with Confectionery / Lunch / Beverages subfolders for raw shots), Menu
+  Designs, Marketing & Social (with a Marketing Plans archive), and Admin & Documents.
+- **A branded, team-editable product & price sheet**, split into **eight category tabs** —
+  Confectionery, Lunch, Beverages, Platters, Combo Deals, Promos, Cakes, New Products —
+  each carrying the Marbl palette, a frozen header, currency-formatted prices and a
+  per-item **photo-link** column.
+- **A menu design** populated with the real product range and prices.
+- **A START HERE guide**, styled in the brand (terracotta headings, sage rules, Poppins).
+- **An on-brand team dashboard** — one page linking the whole system — deployed to the
+  brand's own subdomain.
+
+### Rationale
+- **Market the brand, then let the client run it.** Mirroring the original "fix the
+  foundation first" move, this phase shifts the studio from doing every small update to
+  **maintaining a system the team operates** — aligned with LoneWolf's pivot away from
+  one-off deliverables toward reusable systems.
+- **One source of truth.** The tabs mirror how the counter actually thinks (by category)
+  and give both the team and any future menu generation a single, structured price list.
+- **Low friction for non-designers.** Drop a photo in the right folder, paste its link,
+  type a price — no design tools required.
+- **It should feel like the brand.** The dashboard uses the real logo, the manual's palette
+  and marble-contour pattern, and a display face standing in for Bilderberg on the web —
+  then lives on **team.marblhearth.co.zw**, one memorable link instead of a pile of Google
+  URLs.
+
+### Outcome
+- **Live at [team.marblhearth.co.zw](https://team.marblhearth.co.zw)** — a self-contained
+  page on GitHub Pages with the brand's own custom domain and HTTPS.
+- A **structured Drive** the team updates directly, with **52 products** across tabbed,
+  consistently branded categories and a clear photo-link workflow.
+- The **menu redesigned** on real data, and a **monthly marketing-plan archive** started
+  (November filed).
+- The engagement's centre of gravity moves from *deliverables* to a **living operating
+  system** the client maintains — the studio on hand for design and strategy, not the
+  day-to-day edits.
 
 ---
 
