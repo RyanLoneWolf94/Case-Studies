@@ -14,7 +14,7 @@ delivered deliverables**: the brief, the strategy, the craft decisions, and the 
 |---|---------|--------|------|--------|
 | 01 | [Illuminer Systems](./case-studies/01-illuminer-systems/) | Illuminer Systems (Hangzhou Illuminer Trading & Consulting) | Brand identity + web | ✅ Complete |
 | 02 | [Koki Delivery](./case-studies/02-koki-delivery/) | Koki Technologies | Lead dev + DevOps (e-commerce platform) | 🔲 Ongoing |
-| 03 | [Marbl Hearth](./case-studies/03-marbl-hearth/) | Mavis Chijokwe — Marbl Hearth (formerly Cakes & Bakes) | Full rebrand + digital marketing | ✅ Rebrand complete · 🔲 Social ongoing |
+| 03 | [Marbl Hearth](./case-studies/03-marbl-hearth/) | Mavis Chijokwe — Marbl Hearth (formerly Cakes & Bakes) | Full rebrand + digital marketing + team ops system | ✅ Rebrand & team system · 🔲 Social ongoing |
 | 04 | [WYFIX](./case-studies/04-wyfix/) | WYFIX (Pvt) Ltd | Full brand system | ✅ Complete |
 | 05 | [Greyview Suites](./case-studies/05-greyview-suites/) | Greyview Suites | Hotel management system (dev) | 🔲 Ongoing |
 | 06 | [Packforge / The Nexus](./case-studies/06-packforge/) | LoneWolf Digital (internal product) | Studio management SaaS | 🔲 In development |
